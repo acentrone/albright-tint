@@ -703,9 +703,11 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-/* Smooth scroll for anchor links */
+/* Smooth scroll for anchor links (skip dropdown toggle on mobile) */
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', e => {
+    const isDropdownToggle = a.closest('.nav-dropdown') && a.parentElement.classList.contains('nav-dropdown');
+    if (isDropdownToggle && window.innerWidth <= 900) return;
     e.preventDefault();
     const target = document.querySelector(a.getAttribute('href'));
     if (target) {
