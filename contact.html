@@ -445,6 +445,23 @@ footer { padding: 60px 0 40px; border-top: 1px solid rgba(0,0,0,0.05); }
 @media (max-width: 640px) {
   .values-grid, .milestones { grid-template-columns: 1fr; }
 }
+
+/* ── Mobile Menu ── */
+.nav-links.mobile-open {
+  display: flex; flex-direction: column; position: absolute;
+  top: 100%; left: 0; right: 0; background: rgba(255,255,255,0.98);
+  backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+  padding: 24px 32px; gap: 0; border-bottom: 1px solid rgba(0,0,0,0.08);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08); z-index: 99;
+}
+.nav-links.mobile-open a {
+  padding: 14px 0; border-bottom: 1px solid rgba(0,0,0,0.05);
+  font-size: 15px; width: 100%;
+}
+.nav-links.mobile-open a:last-child { border-bottom: none; }
+.mobile-menu-btn.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+.mobile-menu-btn.active span:nth-child(2) { opacity: 0; }
+.mobile-menu-btn.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
 </style>
 </head>
 <body>
@@ -510,7 +527,7 @@ footer { padding: 60px 0 40px; border-top: 1px solid rgba(0,0,0,0.05); }
             <div class="info-icon">✉️</div>
             <div>
               <h4>Email</h4>
-              <p><a href="mailto:info@albrightwindowtint.com">info@albrightwindowtint.com</a></p>
+              <p><a href="/cdn-cgi/l/email-protection#6900070f062908050b1b000e011d1e00070d061e1d00071d470a0604"><span class="__cf_email__" data-cfemail="e980878f86a988858b9b808e819d9e80878d869e9d80879dc78a8684">[email&#160;protected]</span></a></p>
             </div>
           </div>
         </div>
@@ -607,9 +624,4 @@ footer { padding: 60px 0 40px; border-top: 1px solid rgba(0,0,0,0.05); }
     </div>
   </div>
 </footer>
-<script>
-const nav = document.getElementById('navbar');
-window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 60));
-</script>
-</body>
-</html>
+<script data-cfasync="fals
